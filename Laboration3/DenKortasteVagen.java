@@ -1,4 +1,9 @@
 // DenKortasteVagen.java
+/****************************
+*							*
+*  Author Anthony Heikkinen *
+*							*
+****************************/
 
 /*
 

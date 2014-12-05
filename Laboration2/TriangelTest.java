@@ -1,4 +1,9 @@
 // TriangelTest.java
+/****************************
+*							*
+*  Author Anthony Heikkinen *
+*							*
+****************************/
 
 /***************************************************************
 En klass för att testa de statiska metoderna i klassen Triangel.

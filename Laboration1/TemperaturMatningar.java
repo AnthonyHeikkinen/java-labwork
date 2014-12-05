@@ -1,4 +1,9 @@
 //TemperaturMatningar.java
+/****************************
+*							*
+*  Author Anthony Heikkinen *
+*							*
+****************************/
 import java.util.*; // Scanner, Locale
 import java.lang.*; // Math
 
