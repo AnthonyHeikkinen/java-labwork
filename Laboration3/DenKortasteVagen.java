@@ -5,9 +5,11 @@
 *							*
 ****************************/
 
+
 /*
 
 En specialistklass som utför beräkningar med längder mellan stationer.
+Bland annat den kortaste vägen
 
 */
 
