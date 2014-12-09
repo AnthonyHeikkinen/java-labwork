@@ -88,28 +88,4 @@ class Tal
 		System.out.printf("\n%"+len+"s \n%"+len+"s\n%"+len+"s \n%"+len+"s\n\n", this.strTal, "+ "+tal2.strTal, understryk, svar);
 	}
 
-
-
-
-
-
-
-
-
-
-/*	public Tal add ( Tal b )
-	{
-
-		int length = this.intArrTal.length() > b.intArrTal.length ? this.intArrTal.length : b.intArrTal.length();
-		if ( this.talArrInt.length != length )
-		{
-			Tal temp = new Tal("0");
-			temp.talArrInt = this.talArrInt;
-			this.talArrInt = new int[length];
-
-
-
-		}
-	}
-*/
 }
