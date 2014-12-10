@@ -7,7 +7,7 @@ class OperationerMedNaturligaHeltalGivnaSomTeckenstrangar
 	{
 		out.println ( "OPERATIONER MED NATURLIGA HELTAL GIVNA SOM TECKENSTRÄNGAR" );
 
-		String strang = "997 1111523";
+		String strang = "9999 9111";
 
 		Scanner in = new Scanner (strang);
 
@@ -17,12 +17,8 @@ class OperationerMedNaturligaHeltalGivnaSomTeckenstrangar
 		Tal tal1 = new Tal (strTal1);
 		Tal tal2 = new Tal (strTal2);
 
-		//String svar = tal1.add(tal2);
-
-		//out.println(tal1);
-		//out.println(tal2);
-		//out.println(svar);
-
 		tal1.addAndPrint(tal2);
+		out.println ();
+		tal1.subAndPrint(tal2);
 	}
 }
