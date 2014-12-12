@@ -4,69 +4,72 @@ class RaknaMedStrangar
 {
 	public static void main (String[] args)
 	{
-		String strTal = "822 149";
-
+		String strTal = "01 1090";
 		Scanner in = new Scanner(strTal);
 		String tal1 = in.next();
 		String tal2 = in.next();
 
 		String summa = addition ( tal1, tal2 );
+
 		visa(tal1, tal2, summa, "+");
+
 
 	}
 
 	public static String addition ( String tal1, String tal2 )
 	{
+		StringBuilder svar = new StringBuilder ();
 
-		StringBuilder sbTal1 = new StringBuilder (tal1);
-		StringBuilder sbTal2 = new StringBuilder (tal2);
-		StringBuilder sbSumma  = new StringBuilder ();
+		// Högsta index
+		int tal1in = tal1.length() - 1;
+		int tal2in = tal2.length() - 1;
 
-		int len1 = sbTal1.length();
-		int len2 = sbTal2.length();
+		int siffra1 = 0;
+		int siffra2 = 0;
+		int minnessiffra = 0;
+		int rest = 0;
 
-		int maxLen = len1 > len2 ? len1 : len2;
 
-		if ( len1 == len2 ) {}
-		else if( maxLen > len1 )
+
+		while ( tal1in >= 0 && tal2in >= 0 )
 		{
-			for ( int i = sbTal1.length(); len1 <= maxLen; i++)
-			{
-				sbTal1.insert(0," ");
-				len1 = sbTal1.length();
-			}
-		} else
-		{
-			for ( int i = len2; len2 <= maxLen; i++)
-			{
-				sbTal2.insert(0, " ");
-				len2 = sbTal2.length();
-			}
+			siffra1 = tal1.charAt(tal1in)-48;
+			siffra2 = tal2.charAt(tal2in)-48;
+			rest = (minnessiffra + siffra1 + siffra2) % 10;
+			minnessiffra = (minnessiffra + siffra1 + siffra2) / 10;
+
+			svar.insert(0, rest);
+			tal1in--;
+			tal2in--;
 		}
 
-		int carry = 0;
-		for ( int i = maxLen-1; i >= 0; i--)
+		while ( tal1in >= 0 )
 		{
-			int siffra1 = sbTal1.charAt(i)-48;
-			int siffra2 = sbTal2.charAt(i)-48;
-			int summering = 0;
-			if ( siffra1 == " ".charAt(0) )
-			{
-				summering = siffra2+carry;
-			} else if (siffra2 == " ".charAt(0) )
-			{
-				summering = siffra1+carry;
-			} else
-			{
-				summering = siffra1+siffra2+carry;
-			}
+			siffra1 = tal1.charAt(tal1in)-48;
+			rest = (minnessiffra + siffra1) % 10;
+			minnessiffra = (minnessiffra + siffra1) / 10;
 
-			carry = summering / 10;
-			int rest = summering % 10;
-			sbSumma.insert(0, rest);
+			svar.insert(0, rest);
+			tal1in--;
 		}
 
-		return sbSumma.toString();
+		while ( tal2in >= 0 )
+		{
+			siffra2 = tal2.charAt(tal2in)-48;
+			rest = (minnessiffra + siffra2) % 10;
+			minnessiffra = (minnessiffra + siffra2) / 10;
+
+			svar.insert(0, rest);
+			tal2in--;
+		}
+
+		if (minnessiffra == 1)
+		{
+			svar.insert(0, minnessiffra);
+			minnessiffra = 0;
+		}
+
+		return svar.toString();
 	}
 
 	public static void visa ( String tal1, String tal2, String summa,String operand)
