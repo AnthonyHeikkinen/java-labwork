@@ -4,8 +4,8 @@ class RaknaMedStrangar
 {
 	public static void main (String[] args)
 	{
-		String strTal = "8888 799";
-		Scanner in = new Scanner(strTal);
+		out.print( "Mata in två heltal (första talet större än andra): " );
+		Scanner in = new Scanner(System.in);
 		String tal1 = in.next();
 		String tal2 = in.next();
 
