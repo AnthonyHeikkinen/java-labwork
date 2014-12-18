@@ -83,16 +83,52 @@ class Polylinje
 	}
 
 
-	/*public void laggTillFramfor (Punkt horn, String hornNamn)
+	public void laggTillFramfor (Punkt horn, String hornNamn)
 	{
 		Punkt[] nyHorn = new Punkt [this.horn.length + 1];
+		// OM soktaIndex är -1, kasta exception (hörn hittades inte)
+		int 	soktaIndex = sokHornNamn(hornNamn);
+
+		int		i = 0;
+		boolean hasInserted = false;
+		while ( !hasInserted )
+		{
+			if ( i == soktaIndex )
+			{
+				hasInserted = true;
+				break;
+			}
+			nyHorn[i] = this.horn[i];
+			i++;
+		}
+		nyHorn[i] = horn;
+		while ( hasInserted && i < this.horn.length )
+		{
+			nyHorn[i+1] = this.horn[i];
+			i++;
+		}
+
+		this.horn = nyHorn;
 
 	}
 
-	public int sokHorn (String hornNamn)
+	public int sokHornNamn (String hornNamn)
 	{
+		// Init med -1, ifall inget hittas return -1
+		int soktaHornetIndex = -1;
 
-	}*/
+		// Jämför namn mot sokta namnet
+		for (int i = 0; i < horn.length; i++)
+		{
+			if ( hornNamn.equalsIgnoreCase( horn[i].getNamn()) )
+			{
+				soktaHornetIndex = i;
+				break;
+			}
+		}
+
+		return soktaHornetIndex;
+	}
 
 /*
 	public void taBort (String hornNamn)

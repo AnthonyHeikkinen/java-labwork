@@ -10,8 +10,12 @@ class PolylinjeTest
 		pArr[4] = new Punkt ("E", 8, 3);
 		Polylinje pl = new Polylinje (pArr);
 
+		Punkt p = new Punkt ("B1", 4, 3 );
 		System.out.println ( pl );
 		System.out.println (pl.langd());
 
+		System.out.println (" Efter tillagd ");
+		pl.laggTillFramfor( p, "C");
+		System.out.println (pl);
 	}
 }
