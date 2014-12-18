@@ -1,17 +1,17 @@
 import java.util.NoSuchElementException;
-class Polylinje
+class Polylinje1
 {
 	private Punkt[]		horn;
 	private String 		farg = "svart";
 	private int 		bredd = 1;
 
 	// Konstruktorer
-	public Polylinje ()
+	public Polylinje1 ()
 	{
 		this.horn = new Punkt[0];
 	}
 
-	public Polylinje (Punkt[] horn)
+	public Polylinje1 (Punkt[] horn)
 	{
 		this.horn = new Punkt[horn.length];
 		for ( int i = 0; i < horn.length; i++ )
@@ -29,14 +29,10 @@ class Polylinje
 		return str;
 	}
 
-	// Kopierar vektorn this.horn och returnerar referensen till kopian
+	// Returnerar referensen till objektets horn vektor
 	public Punkt[] getHorn ()
 	{
-		Punkt[] kopieradeHorn = new Punkt[horn.length];
-		for (int i = 0; i < horn.length; i++)
-			kopieradeHorn[i] = horn[i];
-
-		return kopieradeHorn;
+		return horn;
 	}
 
 	// Returnerar Polylinjens färg
