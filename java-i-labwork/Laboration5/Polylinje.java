@@ -126,7 +126,7 @@ class Polylinje
 			nyHorn[i] = this.horn[i];
 			i++;
 		}
-		nyHorn[i] = new Punkt (horn);
+		nyHorn[i] = horn;
 		while ( hasInserted && i < this.horn.length )
 		{
 			nyHorn[i+1] = this.horn[i];
@@ -164,40 +164,6 @@ class Polylinje
 		}
 
 		this.horn = nyHorn;
-	}
-	public class PolylinjeIterator
-	{
-		private int aktuell = -1;
-
-		public PolylinjeIterator()
-		{
-			if (Polylinje.this.horn.length > 0)
-				aktuell = 0;
-		}
-
-		public boolean finnsHorn ()
-		{
-			return aktuell != -1;
-		}
-
-		public Punkt horn () throws NoSuchElementException
-		{
-			if (!this.finnsHorn())
-				throw new NoSuchElementException ("slut av iterationen");
-
-			Punkt horn = Polylinje.this.horn[aktuell];
-
-			return horn;
-		}
-
-		public void gaFram ()
-		{
-			if (aktuell >= 0 &&
-				aktuell < Polylinje.this.horn.length - 1)
-				aktuell++;
-			else
-				aktuell = -1;
-		}
 	}
 
 }

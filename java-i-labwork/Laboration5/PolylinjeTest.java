@@ -13,26 +13,12 @@ class PolylinjeTest
 		System.out.println ( pl );
 		System.out.println (pl.langd());
 
-		pl.laggTillFramfor( p, "C");
+		pl.laggTillFramfor( p, "a");
 		System.out.println (" Efter tillagd ");
 		System.out.println (pl);
 
 		pl.taBort("b1");
 		System.out.println ( "Efter borttagning" );
 		System.out.println (pl);
-
-
-		System.out.println ( "En stund med Iteratorn" );
-		Polylinje.PolylinjeIterator plitr = pl.new PolylinjeIterator();
-
-		while (plitr.finnsHorn())
-		{
-			//Visa aktuella Punkten
-			Punkt hornet = plitr.horn();
-			//stega fram.
-			plitr.gaFram();
-			//Skriv ut hornet
-			System.out.println ( hornet );
-		}
 	}
 }
