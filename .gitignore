@@ -42,6 +42,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-Laboration3/DenKortasteVagen.class
+# java training folders and files
+.metadata
+.recommenders
+*.classpath
+*.project
 *.class
-*.BAT
+java-training/creating-objects/.settings/
